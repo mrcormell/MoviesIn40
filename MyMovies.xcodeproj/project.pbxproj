@@ -15,6 +15,7 @@
 		5100B1CA264BC98D00DEAB08 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5100B1C6264BC98D00DEAB08 /* Bundle-Decodable.swift */; };
 		B4EE3F0F26597ACC00B257B0 /* UrlSessionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE3F0E26597ACC00B257B0 /* UrlSessionCodable.swift */; };
 		B4EE3F1A2659ADCD00B257B0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE3F192659ADCD00B257B0 /* Movie.swift */; };
+		B4EE3F1C2659AEDE00B257B0 /* results.json in Resources */ = {isa = PBXBuildFile; fileRef = 5100B1C5264BC98D00DEAB08 /* results.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +148,7 @@
 			files = (
 				5100B1BB264BC88F00DEAB08 /* Preview Assets.xcassets in Resources */,
 				5100B1B8264BC88F00DEAB08 /* Assets.xcassets in Resources */,
+				B4EE3F1C2659AEDE00B257B0 /* results.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

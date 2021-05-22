@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var movieResults = Bundle.main.decode(MovieResults.self, from: "results.json", keyDecodingStrategy: .convertFromSnakeCase)
+    
     var body: some View {
-        Text("Hello World")
+        List {
+            ForEach(movieResults.results) { movie in
+                Text("\(movie.title)")
+            }
+        }
     }
 }
 
