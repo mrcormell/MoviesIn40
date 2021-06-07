@@ -13,7 +13,17 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(movieResults.results) { movie in
-                Text("\(movie.title)")
+                VStack(alignment: .leading) {
+                    Text("\(movie.title)")
+                        .font(.title2)
+                    HStack {
+                        Text("\(movie.releaseDate)")
+                        Text("\(movie.voteAverage, specifier: "%g")/10")
+                    }
+                    Text("\(movie.overview)")
+                        .lineLimit(2)
+                        .font(Font.body.italic())
+                }
             }
         }
     }
