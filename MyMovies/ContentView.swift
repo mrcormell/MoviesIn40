@@ -9,7 +9,7 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct ContentView: View {
-    @State private var movieResults = Bundle.main.decode(MovieResults.self, from: "results.json", keyDecodingStrategy: .convertFromSnakeCase)
+    @State private var movieResults = MovieResults(results: [])
         
     var body: some View {
         List {
@@ -43,6 +43,15 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear(perform: {
+            getMovies()
+        })
+    }
+    
+    func getMovies() {
+        URLSession.shared.get(path: "search/movie", queryItems: ["query":"best"], defaultValue: MovieResults(results: []), completion: { results in
+            movieResults = results
+        })
     }
 }
 
