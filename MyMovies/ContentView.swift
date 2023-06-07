@@ -2,10 +2,9 @@
 //  ContentView.swift
 //  MyMovies
 //
-//  Created by Paul Hudson on 12/05/2021.
+//  
 //
 
-import SDWebImageSwiftUI
 import SwiftUI
 
 struct ContentView: View {
@@ -15,19 +14,9 @@ struct ContentView: View {
         List {
             ForEach(movieResults.results) { movie in
                 HStack {
-                    Group {
-                        if let path = movie.posterPath {
-                            WebImage(url: URL(string: "https://image.tmdb.org/t/p/w342\(path)"))
-                                .placeholder(Image("Loading").resizable())
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 60, height: 90)
-                        } else {
-                            Image("NoPoster")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 60, height: 90)
-                        }
+                    if let path = movie.posterPath {
+                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w342\(path)")) { image in image.resizable() } placeholder: { Color.gray }
+                            .frame(width: 60, height: 90)
                     }
                     VStack(alignment: .leading) {
                         Text("\(movie.title)")
